@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "add_post.css" %}">
+</head>
+<body>
+    <div>
+        <h1>Add Post page</h1>
+
+        <form method='POST' enctype='multipart/form-data'>
+            {% csrf_token %}
+
+            {{ add_form.as_p }}
+
+            <input id='input1' type="submit">
+        </form>
+        <a href="{% url "all_post" %}"><button id='btn'>Main Page</button></a>
+    </div>
+</body>
+</html>

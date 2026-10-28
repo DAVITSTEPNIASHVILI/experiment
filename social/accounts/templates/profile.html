@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "profile.css" %}">
+</head>
+<body>
+    <div>
+        <h1>Current User</h1>
+        {% if user.profile_picture %}
+            <img src="{{ user.profile_picture.url }}">
+        {% endif %}
+        <form method='POST' enctype='multipart/form-data'>
+            {% csrf_token %}
+            <input type="file" name='img'>
+            <input type="submit">
+        </form>
+        <h1>Username: {{ user.username }}</h1>
+        <p>Age: {{ user.age }}</p>
+        <p>Email: {{ user.email }}</p>
+
+        <a href="{% url "profile_edit" %}"><button id='btn'>Edit</button></a>
+        <a href="{% url "all_post" %}"><button id='btn'>Main Page</button></a>
+    </div>
+</body>
+</html>

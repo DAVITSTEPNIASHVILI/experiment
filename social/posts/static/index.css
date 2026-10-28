@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    padding: 40px 15px;
+}
+
+body > h1 {
+    color: #0f172a;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+div h2, p {
+    text-align: center;
+}
+
+#btn1 {
+    border: none;
+    color: white;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transition: transform 0.2s ease;
+}
+
+#btn1:hover {
+    transform: scale(1.05);
+}
+
+#btn2 {
+    border: none;
+    background-color: #ef4444;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(239, 68, 68, 0.2);
+}
+
+#btn2:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+#btn2:active {
+    transform: translateY(0);
+}
+
+/* Header & Navigation Styles */
+.navbar {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    border: none;
+    color: white;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.create-post-btn {
+    border: none;
+    color: white;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+}
+
+.create-post-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.profile-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #1e293b;
+    padding: 6px 12px;
+    border-radius: 10px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: background-color 0.2s ease;
+}
+
+.profile-block:hover {
+    background-color: #f1f5f9;
+}
+
+.profile-block img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-block span {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Post & Content Styles */
+.img1 {
+    width: 28px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.img1:hover {
+    transform: scale(1.15);
+}
+
+#div1 {
+    background-color: #ffffff;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+#div1 h2 a {
+    color: #2563eb !important;
+    font-weight: 600;
+}
+
+.imgs {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.profiles { 
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+}
+
+#btn {
+    border: none;
+    background-color: #f1f5f9;
+    color: #334155;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#btn:hover {
+    background-color: #e2e8f0;
+}
+
+#btn:active {
+    transform: translateY(0);
+}
+
+#input1 {
+    border-radius: 8px;
+    border: 1.5px solid #cbd5e1;
+    width: 100%;
+    max-width: 450px;
+    height: 42px;
+    padding: 0 15px;
+    text-align: left;
+    outline: none;
+    font-size: 0.95rem;
+    color: #1e293b;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+#input1:focus {
+    background-color: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#submit-btn {
+    border: none;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    padding: 9px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.25);
+}
+
+#submit-btn:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(16, 185, 129, 0.35);
+}
+
+#submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+        gap: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .auth-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    #div1 {
+        padding: 15px;
+    }
+
+    body > h1 {
+        font-size: 1.5rem;
+    }
+}

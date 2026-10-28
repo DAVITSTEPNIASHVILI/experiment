@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "global_chat.css"  %}">
+</head>
+<body>
+    <div id='container'>
+        <div id='navbar'>
+            <a href="{% url 'all_post' %}" class="main-page-btn">Main Page</a>
+            <h1>Global Chat</h1>
+            <div style="width: 70px;"></div>
+        </div>
+        <div id='main'>
+            <div id='messaging'>
+                {% for message in global_chat %}
+                    {% if message.user == user %}
+                        <div class="message-row my-message">
+                            <a href="{% url "profile"%}"><p class="username">{{ user.username }}</p></a>
+                            <div class="message-content">
+                                {% if user.profile_picture %}
+                                    <img src="{{ user.profile_picture.url }}">
+                                {% endif %}
+                                <p class="message-bubble">{{ message.messages }}</p>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="message-row other-message">
+                            <a href="{% url "users" message.user.id %}"><p class="username">{{ message.user.username }}</p></a>
+                            <div class="message-content">
+                                {% if message.user.profile_picture %}
+                                    <img src="{{ message.user.profile_picture.url }}">
+                                {% endif %}
+                                <p class="message-bubble">{{ message.messages }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <form method='POST' id='form'>
+                {% csrf_token %}
+                {{ global_chat_form }}
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
