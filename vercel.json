@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "social/social/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "social/social/wsgi.py"
+    }
+  ]
+}
